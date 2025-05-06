@@ -6,68 +6,124 @@
     <title>Portfolio Ilhan Bulut</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+    color: #2e2e2e;
+}
 
-        .timeline-container {
-            width: 80%;
-            margin: 50px auto;
-        }
+.timeline-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+}
 
-        .timeline {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 
-        .timeline .container {
-            width: 45%;
-            margin: 20px 0;
-            position: relative;
-            background-color: #eee;
-            border-radius: 5px;
-            padding: 20px;
-        }
+.event {
+    position: relative;
+    width: 48%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin: 30px 0;
+    padding: 25px 30px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
 
-        .timeline .container.left {
-            align-self: flex-start;
-        }
 
-        .timeline .container.right {
-            align-self: flex-end;
-        }
+.event:hover {
+    transform: translateY(-5px);
+}
 
-        .timeline .container .time {
-            position: absolute;
-            top: -10px;
-            background-color: #ddd;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
-        }
+.event.left {
+    left: 0;
+    margin-right: auto;
+}
 
-        .timeline .container.left .time {
-            left: 20px;
-        }
+.event.right {
+    left: 52%;
+}
 
-        .timeline .container.right .time {
-            right: 20px;
-        }
+.event .time {
+    position: absolute;
+    top: -20px;
+    background-color: #4f6d7a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
-        .timeline .container .content {
-            padding: 15px;
-            background-color: white;
-            border-radius: 6px;
-            position: relative;
-        }
-    </style>
+.event.left .time {
+    left: 25px;
+}
+
+.event.right .time {
+    right: 25px;
+}
+
+.event .content h4 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.event .content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.event img {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+/* Ligne centrale de la frise */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 18%;
+    background-color: #4f6d7a;
+    z-index: 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 8px;
+    }
+
+    .event {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 30px;
+    }
+
+    .event .time {
+        left: -10px !important;
+        right: auto !important;
+    }
+}
+
+  </style>
 </head>
 <body>
 
@@ -88,7 +144,7 @@
 
 <!-- Section principale -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="slide.jpg" alt="Image d'arrière-plan" width="1500" height="800">
+  <img class="w3-image" src="slide.jpg" alt="Image d'arrière-plan" width="1500" height="900">
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Ilhan</b></span> <span class="w3-hide-small w3-text-light-grey">Bulut</span></h1>
   </div>
@@ -96,67 +152,127 @@
 
 <!-- Section À propos -->
 <div class="w3-container w3-padding-32" id="about">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">À propos</h3>
-  <p>Né en Septembre 2004, je suis un étudiant de 20 ans qui souhaite en apprendre plus sur le monde de l'informatique et développer mes connaissances de manière générale. Dans l'objectif d'être totalement indépendant et construire mon avenir, j'ai fait le choix de l'alternance.
-    De plus, je trouve que l'apprentissage en pratique est plus conbstructif que de ne faire que de la théorie.</p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size: 32px; text-align: right; margin-right: 750px;">À propos</h3>
+  <p>Né en septembre 2004, j’ai 20 ans et je suis un étudiant passionné par l’informatique, curieux de nature et toujours prêt à apprendre. Mon objectif est clair : devenir autonome professionnellement en construisant des compétences solides, utiles et durables dans le domaine du numérique.
+
+    Convaincu que l’apprentissage par la pratique est bien plus formateur que la théorie seule, j’ai choisi la voie de l’alternance. Cette méthode me permet non seulement de renforcer mes connaissances techniques, mais aussi de les appliquer concrètement en entreprise, jour après jour.
+    
+    J’aborde chaque nouveau défi comme une occasion d’évoluer, et je suis motivé par l’envie de créer, de comprendre et de construire mon avenir avec détermination.</p>
 </div>
 
 <!-- Section Parcours -->
 <div class="w3-container w3-padding-32" id="timeline">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Parcours</h3>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size: 32px; text-align: right; margin-right: 750px;">Parcours</h3>
+
   <div class="timeline">
-    <div class="container left">
-      <div class="time">2018-2021</div>
-      <div class="content">
-        <h4>BAC en Gestion Administration</h4>
-        <p>La gestion administrative organise et coordonne les activités d'une organisation pour assurer son efficacité et sa conformité.</p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="time">2022-2025</div>
-      <div class="content">
-        <h4>BTS SIO SLAM</h4>
-        <p>Le BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) forme en deux ans des techniciens spécialisés en développement d’applications, programmation, et gestion de bases de données, adaptés aux besoins des entreprises</p>
-      </div>
-    </div>
+  
+
+<!-- Événement 1 : Projet de gestion -->
+<div class="event right">
+  <div class="time">2019</div>
+  <div class="content">
+    <h4>Bac Gestion administration</h4>
+    <p>Le Bac Gestion-Administration forme des assistants de gestion. Ils assurent le suivi administratif, commercial et comptable d’une organisation.</p>
+    <img class="w3-image" src="STP.jpg" alt="Projet de gestion" width="500">
   </div>
 </div>
 
-<div class="w3-container w3-padding-32" id="projects">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projets</h3>
-  <p>Voici quelques projets récents :</p>
-  <ul>
-    <li><b>Application de gestion des tâches :</b> Développement d'une application web en JavaScript et Node.js permettant de créer, modifier et supprimer des tâches. Inclut une interface utilisateur dynamique avec React.</li>
-    <li><b>Site e-commerce fictif :</b> Réalisation d'un site de commerce électronique utilisant HTML, CSS et PHP avec une base de données MySQL. Intégration d'une fonctionnalité de panier et de gestion des produits.</li>
-    <li><b>Portfolio interactif :</b> Création d'un site web personnel utilisant JavaScript, CSS avancé (animations) et une interface utilisateur responsive pour présenter mes compétences et projets.</li>
-    <li><b>Outil de suivi des dépenses :</b> Développement d'une application mobile cross-platform (React Native) pour gérer et visualiser les dépenses personnelles avec des graphiques interactifs.</li>
-    <li><b>Dashboard analytique :</b> Conception d'un tableau de bord en Python avec Flask pour visualiser des données d'entreprise, incluant des graphiques interactifs réalisés avec Chart.js.</li>
-  </ul>
+<!-- Événement 2 : Stage administratif -->
+<div class="event left">
+  <div class="time">2022</div>
+  <div class="content">
+    <h4>BTS MCO</h4>
+    <p>Le BTS MCO forme des commerciaux polyvalents. Ils gèrent la relation client en physique, à distance et en ligne.</p>
+    <img class="w3-image" src="794_screen_578x164.jpg" alt="Stage administratif" width="500">
+  </div>
 </div>
+
+<!-- Événement 3 : Projet de fin d’année -->
+<div class="event right">
+  <div class="time">2024-2025</div>
+  <div class="content">
+    <h4>BTS SIO en SLAM</h4>
+    <p>Le BTS SIO option SLAM forme des développeurs d'applications. Ils créent, testent et maintiennent des solutions logicielles pour les entreprises.</p>
+    <img class="w3-image" src="ITIS CROP.png" alt="Projet de fin d’année" width="500" lenght="500  ">
+  </div>
+</div>
+
+
+  
+
+    <div style="display: flex; align-items: flex-start; gap: 20px; margin-top: 150px;">
+      <img src="Almaviva-Pasteur-001.jpg" alt="Clinique Pasteur"
+           style="width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <div style="max-width: 600px;">
+        <h3 style=>Stage deuxième année</h3>
+        <p style="font-size: 19px;margin-top: 50px;"> La Clinique Pasteur de Ris-Orangis est un établissement privé du groupe Almaviva Santé, spécialisé en oncologie et soins de suite. J’y ai effectué un stage de développement web en 2025, contribuant à la refonte du site interne et à l’amélioration des outils numériques pour les professionnels de santé.</p>
+        <p style="font-size: 19px; margin-top: 35px;">
+          📍 <strong>Adresse :</strong> 17 avenue de Rigny, 91130 Ris-Orangis<br>
+          🌐 <strong>Site web :</strong> 
+          <a style="font-size: 13px;"href="https://www.clinique-pasteur-risorangis.fr" target="_blank">
+            www.clinique-pasteur-risorangis.fr
+          </a><br>
+      </div>
+    </div>
+    
+
+
+<div class="w3-container w3-padding-32" id="projects">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size: 32px; text-align: right; margin-right: 750px;">Projets</h3>
+  <p>Voici des projets récents réalisés durant mes deux stages:</p>
+  <p>
+    J'ai réalisé une Modélisation Conceptuelle de Données (MCD) sur Looping afin d'obtenir un modèle d'analyse détaillé, après m'être vu confier une tâche à accomplir.
+  </p>
+  <img class="w3-image" src="model.png" alt="Image d'arrière-plan" width="550" height="800" style="margin-left: 475px; margin-top: 20px; margin-bottom: 20px;">
+
+  <p>
+    Réalisation d'un site web pour une entreprise afin de présenter l'entreprise , prendre rendez-vous ou pour les contacter.
+  </p>
+  <img class="w3-image" src="SiteWeb.png" alt="Image d'arrière-plan" width="1200" height="800" style="margin-left: 195px; margin-top: 20px; margin-bottom: 20px;">
+<p>
+  Réalisation d'une base de données qui a pour but de centraliser et d'organiser toutes les informations médicales et administratives liées aux patients, médecins, rendez-vous, consultations et documents médicaux de la clinique.
+</p>
+<img class="w3-image" src="BASE DE DONNNER.png" alt="Image d'arrière-plan" width="1200" height="800" style="margin-left: 195px; margin-top: 20px; margin-bottom: 20px;">
+
+<p>
+  Réalisation d'un gestionnaire de fiche frais pour les visiteurs.
+</p>
+<img class="w3-image" src="Gestionnaire de frais.png" alt="Image d'arrière-plan" width="1200" height="800" style="margin-left: 195px; margin-top: 20px; margin-bottom: 20px;">
+
+
+
+
+
 
 <!-- Section Veille Technologique -->
 <div class="w3-container w3-padding-32" id="ai-watch">
   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Veille Technologique sur l'IA</h3>
-  <p>Je m'intéresse particulièrement aux évolutions dans le domaine de l'intelligence artificielle. Voici quelques sujets récents que j'ai explorés :</p>
+  <p>Je m'intéresse particulièrement aux évolutions dans le domaine de l'intelligence artificielle. Voici un sujets récents que j'ai explorés :</p>
   <ul>
-    <li>Les modèles de langage avancés comme GPT et leurs applications.</li>
-    <li>Les impacts de l'IA générative sur les industries créatives.</li>
-    <li>Les systèmes d'apprentissage par renforcement dans les jeux vidéo.</li>
+    <li>Nouveau modèle de carte graphique avec une IA</li>
+
+    <img class="w3-image" src="Nvidia.jpg" alt="Image d'arrière-plan" width="600" height="800" style="margin-left: 135px; margin-top: 20px; margin-bottom: 20px;"> <img class="w3-image" src="5090.webp" alt="Image d'arrière-plan" width="695" height="800" style="margin-left: 50px;">
   </ul>
 </div>
 
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"margin-right: 750px>CV</h3>
+  <p>Vous pouvez également télécharger mon CV en cliquant sur le bouton ci-dessous :</p>
+  <a href="CV M. BULUT ILHAN.pdf" download class="w3-button w3-blue w3-padding-large w3-margin-top">
+    📄 Télécharger mon CV (PDF)
+  </a>
+</div>
 <!-- Section Contact -->
 <div class="w3-container w3-padding-32" id="contact">
   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
   <p>Pour me contacter, envoyez un e-mail à <a href="mailto:bulutilhan6@gmail.com">bulutilhan6@gmail.com</a> ou appelez-moi au <a href="tel:+33638031660">+33 06 38 03 16 60</a></p>
-</div>
+
+
 
 <!-- Section GitHub -->
 <div class="w3-container w3-padding-32" id="github">
   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Mon GitHub</h3>
   <p>Retrouvez mes projets sur GitHub :</p>
-  <a href="https://github.com/NeozV3" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Mon GitHub</a>
+  <a href="https://github.com/IlhanBu" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Mon GitHub</a>
 </div>
-
 </body>
 </html>
